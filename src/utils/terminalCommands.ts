@@ -9,23 +9,22 @@ export interface CommandResponse {
   outputs: CommandOutput[];
 }
 
-// Add your personal info and links here
-const personalInfo = [
-  { type: 'text', content: 'Hello, I am [Your Name].' },
-  { type: 'text', content: 'I am a [Your Profession/Title].' },
-  { type: 'text', content: 'I specialize in [Your Specialties].' },
+// Walter's personal info
+const personalInfo: CommandOutput[] = [
+  { type: 'text', content: 'I am Walter' },
+  { type: 'text', content: 'About me: my motto, let\'s calculate it. My superpower, I find everything interesting. Volatile polymath.' },
   { type: 'text', content: 'Type "links" to see how you can connect with me.' }
 ];
 
-const personalLinks = [
-  { type: 'link', content: 'Portfolio', href: 'https://yourportfolio.com' },
-  { type: 'link', content: 'GitHub', href: 'https://github.com/yourusername' },
-  { type: 'link', content: 'LinkedIn', href: 'https://linkedin.com/in/yourusername' },
-  { type: 'link', content: 'Twitter', href: 'https://twitter.com/yourusername' },
+// Walter's personal links
+const personalLinks: CommandOutput[] = [
+  { type: 'link', content: 'X (Twitter)', href: 'https://x.com/walter_h_g_' },
+  { type: 'link', content: 'LinkedIn', href: 'https://www.linkedin.com/in/walterhgp/' },
+  { type: 'link', content: 'Deep Sight Consulting', href: 'https://deepsight.consulting/' },
   { type: 'text', content: 'Click on any link above to visit.' }
 ];
 
-const helpMenu = [
+const helpMenu: CommandOutput[] = [
   { type: 'success', content: 'Available commands:' },
   { type: 'text', content: 'help - Show this menu' },
   { type: 'text', content: 'info - Display information about me' },
@@ -35,7 +34,7 @@ const helpMenu = [
   { type: 'warning', content: 'Try typing a command and pressing Enter.' }
 ];
 
-const aboutText = [
+const aboutText: CommandOutput[] = [
   { type: 'text', content: 'This interactive terminal was created using React and TypeScript.' },
   { type: 'text', content: 'It mimics a command-line interface with a set of predefined commands.' },
   { type: 'text', content: 'Feel free to explore and discover more about me through the available commands.' }
