@@ -1,4 +1,4 @@
-
+<lov-codelov-code>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
 
 @tailwind base;
@@ -138,12 +138,10 @@
 
   .terminal-input {
     @apply bg-transparent border-none outline-none text-terminal-text w-full font-mono p-0 m-0;
+    caret-color: theme('colors.terminal.text');
   }
 
-  .terminal-cursor {
-    @apply inline-block w-2 h-5 bg-terminal-text align-middle animate-cursor-blink ml-0.5;
-  }
-
+  
   .terminal-error {
     @apply text-terminal-error;
   }
@@ -164,3 +162,4 @@
     @apply text-terminal-link hover:underline cursor-pointer;
   }
 }
+</lov-code>

@@ -31,11 +31,11 @@ const TerminalInput: React.FC<TerminalInputProps> = ({
   return (
     <div className="terminal-line">
       <span className="terminal-prompt">{prompt}</span>
-      <div className="terminal-text flex items-center">
+      <div className="terminal-text relative">
         <input
           ref={inputRef}
           type="text"
-          className="terminal-input"
+          className="terminal-input w-full bg-transparent outline-none border-none text-terminal-text font-mono p-0 m-0"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleKeyPress}
@@ -44,7 +44,7 @@ const TerminalInput: React.FC<TerminalInputProps> = ({
           autoCapitalize="off"
           aria-label="Terminal input"
         />
-        <span className="terminal-cursor"></span>
+        {/* Remove the separate cursor element since we'll rely on the native cursor */}
       </div>
     </div>
   );
