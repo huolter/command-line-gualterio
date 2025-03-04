@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				terminal: {
+					bg: '#000000',
+					text: '#F8F8F2',
+					success: '#50FA7B',
+					error: '#FF5555',
+					prompt: '#BD93F9',
+					link: '#8BE9FD',
+					warning: '#FFB86C',
+					comment: '#6272A4'
 				}
 			},
 			borderRadius: {
@@ -84,11 +95,34 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'cursor-blink': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0' }
+				},
+				'text-reveal': {
+					'0%': { width: '0%' },
+					'100%': { width: '100%' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(5px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'fade-up': {
+					'0%': { opacity: '0', transform: 'translateY(10px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'cursor-blink': 'cursor-blink 1s infinite',
+				'text-reveal': 'text-reveal 1.5s ease-out forwards',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'fade-up': 'fade-up 0.5s ease-out'
+			},
+			fontFamily: {
+				mono: ['JetBrains Mono', 'Menlo', 'Consolas', 'Monaco', 'Liberation Mono', 'Lucida Console', 'monospace']
 			}
 		}
 	},

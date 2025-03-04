@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -79,6 +75,7 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -96,6 +93,74 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-terminal-bg text-terminal-text font-mono m-0 p-0 min-h-screen;
+  }
+
+  a {
+    @apply text-terminal-link hover:underline transition-all duration-200;
+  }
+
+  ::selection {
+    @apply bg-terminal-comment text-terminal-bg;
+  }
+}
+
+@layer components {
+  .terminal-window {
+    @apply w-full h-full overflow-auto p-4 md:p-6 bg-terminal-bg;
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.terminal.comment') transparent;
+  }
+
+  .terminal-window::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  .terminal-window::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .terminal-window::-webkit-scrollbar-thumb {
+    @apply bg-terminal-comment rounded-full;
+  }
+
+  .terminal-line {
+    @apply flex items-start mb-1 animate-fade-in;
+  }
+
+  .terminal-prompt {
+    @apply text-terminal-prompt mr-2 select-none;
+  }
+
+  .terminal-text {
+    @apply flex-1;
+  }
+
+  .terminal-input {
+    @apply bg-transparent border-none outline-none text-terminal-text w-full font-mono p-0 m-0;
+  }
+
+  .terminal-cursor {
+    @apply inline-block w-2 h-5 bg-terminal-text align-middle animate-cursor-blink ml-0.5;
+  }
+
+  .terminal-error {
+    @apply text-terminal-error;
+  }
+
+  .terminal-success {
+    @apply text-terminal-success;
+  }
+
+  .terminal-warning {
+    @apply text-terminal-warning;
+  }
+
+  .terminal-comment {
+    @apply text-terminal-comment;
+  }
+
+  .terminal-link {
+    @apply text-terminal-link hover:underline cursor-pointer;
   }
 }
