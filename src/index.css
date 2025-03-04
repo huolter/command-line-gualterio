@@ -1,4 +1,4 @@
-<lov-codelov-code>
+
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
 
 @tailwind base;
@@ -162,4 +162,3 @@
     @apply text-terminal-link hover:underline cursor-pointer;
   }
 }
-</lov-code>
