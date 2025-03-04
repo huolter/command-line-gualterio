@@ -15,18 +15,6 @@ const Terminal: React.FC = () => {
   const terminalRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Initial welcome message
-  useEffect(() => {
-    const welcomeMessage: TerminalHistoryItem = {
-      command: '',
-      outputs: [
-        { type: 'success', content: '✨ Welcome to the Interactive Terminal ✨' },
-        { type: 'text', content: 'Type "help" to see available commands.' }
-      ]
-    };
-    setHistory([welcomeMessage]);
-  }, []);
-
   // Auto-scroll to bottom when history changes
   useEffect(() => {
     if (terminalRef.current) {
